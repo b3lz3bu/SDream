@@ -4,7 +4,7 @@ SDream è un script bash che vi permette di creare/gestire archivi di giochi/rom
 
 **Cosa è GDEMU ?** GDEMU è una periferica hardware che va a sostituire in tolo la lente di lettura dei dischi Dreamcast a bordi di quest'ultimo, i vostri GD-Rom potrenno essere utilizzati come immagini direttamente archiviate su una memoria esterna di tipo SD.
 
-![gdemu](/home/emanuele/SDream/guida/gdemu.png)
+![gdemu](gdemu.png)
 
 Questa periferica è facilmente acquistabili sui principali shop online di elettronica e non solo, il costo è tutto sommato contenuto, l'installazione è semplicissima e non è necessario procedere con saldature di alcun genere, tutto si fa collegando il flat cable e la scheda si fissa con dei supporti in plastica semplicemente a pressione.
 
@@ -14,7 +14,7 @@ Questa periferica è facilmente acquistabili sui principali shop online di elett
 Esistono alcuni tool per Windows ma non ho trovato nulla di davvero funzionante in ambiente Linux, nonostante le ricerche restituiscano risultati i tool disponibili, forsa per mia mancanza non so, sono risultati non funzionanti, o peggio, versioni Windows malamente rimaneggiate che necessiatano di librerire Microsoft per funzionare.
 Analizzato il funzionamento del tool GD-SDMaker per Windows ho immaginato di poterlo realizzare in maniera naloga anche su Linux, non sono uno sviluppatore e mi sono barcamenato per farlo utilizzando la bash di Linux. Questo ha portato a dei compromessi, ovviamente, anche se ho provato, non sono riuscito a donare allo strumento un aspetto grafico, il tutto funziona in fatto dal terminale.
 
-![sdream_v10_scr001](/home/emanuele/SDream/guida/sdream_v10_scr001.png)
+![sdream_v10_scr001](sdream_v10_scr001.png)
 
 **Installazione e compatibilità** SDream è fondamentalmente uno script che si occupa di *organizzare* la scheda SD per GDEMU, in parte questa operazione potrebbe essere realizzata anche manualmente, conoscendo lo standard di nomenclatura, file ed organizzazione degli stessi come richiesto da GDEMU, tuttavia questa operazione  potrebbe rivelarsi lunga e noiosa e proprio per la quantità di *cosette* da sistemare sensibile ad errori anche solo che di digitazione, un robot che lo fa per noi ci può far risparmiare fatica e tempo, tempo da reimpiegare a giocare con il Dreamcast.
 
