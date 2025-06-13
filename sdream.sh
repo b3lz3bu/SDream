@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SDREAM - by B3LZ3BU - rymstudio 2025
+# SDREAM - by B3LZ3BU - rymstudio 2025 - v0.1
 # Gestisce file immagine Dreamcast per GDEMU da riga di comando
 
 VERSION="1.0"

@@ -60,7 +60,7 @@ rm sdream.tar.gz
 echo "finito!"
 ```
 
-questo è uno script per la bash, che ho volutamente resto super semplice, potete anche eseguire i comandi singolarmente, salvo gli *echo* che in quel caso servirebbero a poco
+questo è uno script per la bash, che ho volutamente reso super semplice, potete anche eseguire i comandi singolarmente, salvo gli *echo* che in quel caso servirebbero a poco
 
 ***Come utilizzare SDream*** 
 
