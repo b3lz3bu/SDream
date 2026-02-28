@@ -533,27 +533,22 @@ remove_game() {
         if [[ "$num" == "$number" ]]; then
             game_found=true
 
-            echo -e "${YELLOW}Gioco selezionato: [$num] $title${NC}"
-            echo -n "Sei sicuro di voler rimuovere questo gioco? [s/N]: "
-            read -r confirm
+            echo -e "${YELLOW}Rimozione: [$num] $title${NC}"
 
-            if [[ "${confirm,,}" == "s" ]]; then
-                # FIX: controllo che il path sia dentro SD_PATH prima di rm -rf
-                local real_sd real_path
-                real_sd=$(realpath "$SD_PATH")
-                real_path=$(realpath "$path" 2>/dev/null || echo "")
+            # Rimozione diretta senza conferma interattiva
+            # FIX: controllo che il path sia dentro SD_PATH prima di rm -rf
+            local real_sd real_path
+            real_sd=$(realpath "$SD_PATH")
+            real_path=$(realpath "$path" 2>/dev/null || echo "")
 
-                if [[ -n "$real_path" && "$real_path" == "$real_sd"/* && "$(basename "$real_path")" != "/" ]]; then
-                    rm -rf "$path"
-                    echo -e "${GREEN}Gioco rimosso con successo!${NC}"
-                    update_gdmenu_list
-                else
-                    echo -e "${RED}Errore: Percorso non sicuro, operazione annullata!${NC}" >&2
-                fi
-                scan_sd
+            if [[ -n "$real_path" && "$real_path" == "$real_sd"/* && "$(basename "$real_path")" != "/" ]]; then
+                rm -rf "$path"
+                echo -e "${GREEN}Gioco rimosso con successo!${NC}"
+                update_gdmenu_list
             else
-                echo "Operazione annullata."
+                echo -e "${RED}Errore: Percorso non sicuro, operazione annullata!${NC}" >&2
             fi
+            scan_sd
             break
         fi
     done < "$GAMES_LIST_FILE"
