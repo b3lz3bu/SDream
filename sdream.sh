@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SDREAM - by B3LZ3BU - rymstudio 2025.2026 - v1.2
+# SDREAM - by B3LZ3BU - rymstudio 2025 - v1.1
 # Gestisce file immagine Dreamcast per GDEMU da riga di comando
 
 set -euo pipefail  # Uscita immediata su errori, variabili non definite, pipe rotte
@@ -114,7 +114,7 @@ scan_sd() {
         # Ignora cartelle di sistema (Trash, spotlight, ecc.)
         [[ "$fname" == .* ]] && continue
         [[ "$fname" == "System Volume Information" ]] && continue
-        [[ "$fname" == "RECYCLER" || "$fname" == "$RECYCLE.BIN" ]] && continue
+        [[ "$fname" == "RECYCLER" || "$fname" == '$RECYCLE.BIN' ]] && continue
         folders+=("$folder")
     done < <(find "$SD_PATH" -maxdepth 1 -mindepth 1 -type d -print0 | sort -z)
 
@@ -664,7 +664,7 @@ convert_to_numbered() {
         # Ignora cartelle di sistema (Trash, spotlight, ecc.)
         [[ "$fname" == .* ]] && continue
         [[ "$fname" == "System Volume Information" ]] && continue
-        [[ "$fname" == "RECYCLER" || "$fname" == "$RECYCLE.BIN" ]] && continue
+        [[ "$fname" == "RECYCLER" || "$fname" == '$RECYCLE.BIN' ]] && continue
         folders+=("$folder")
     done < <(find "$SD_PATH" -maxdepth 1 -mindepth 1 -type d -print0 | sort -z)
 
