@@ -5,7 +5,7 @@
 
 set -euo pipefail  # Uscita immediata su errori, variabili non definite, pipe rotte
 
-VERSION="1.2"
+VERSION="1.3"
 # Risolve il path reale dell'utente anche quando lo script gira con sudo
 # sudo imposta SUDO_USER con il nome dell'utente originale
 _REAL_USER="${SUDO_USER:-$USER}"
@@ -13,8 +13,10 @@ _REAL_HOME=$(getent passwd "$_REAL_USER" 2>/dev/null | cut -d: -f6 || echo "$HOM
 CONFIG_DIR="$_REAL_HOME/.gdemu_mini"
 CONFIG_FILE="$CONFIG_DIR/config.conf"
 SD_PATH=""
-TEMP_DIR="/tmp/gdemu_mini_$$"  # PID nel nome per evitare conflitti tra istanze parallele
-GAMES_LIST_FILE="$TEMP_DIR/games_list.txt"
+TEMP_DIR="/tmp/gdemu_mini_$$"      # PID nel nome per file davvero temporanei
+# GAMES_LIST_FILE e' persistente tra invocazioni diverse: salvato in CONFIG_DIR
+# cosi' scan/remove/rename trovano sempre lo stesso file indipendentemente dal PID
+GAMES_LIST_FILE="$CONFIG_DIR/games_list.txt"
 
 # Colori
 RED='\033[0;31m'
